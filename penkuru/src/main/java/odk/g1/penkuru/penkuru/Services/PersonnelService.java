@@ -32,7 +32,7 @@ public class PersonnelService {
 
     public Personnel modifierPersonel(Long idPersonnelBD, Personnel newInfopersonnel){
         Personnel BDpersonnel = personnelRepository.findById(idPersonnelBD)
-                .orElseThrow(() -> new RuntimeException("L'id donné pour modification ne correspond à aucun personnel !!!"));
+                .orElseThrow(() -> new RuntimeException("L'id du personnel donné pour modification ne correspond à aucun personnel !!!"));
         BDpersonnel.setNom(newInfopersonnel.getNom());
         BDpersonnel.setPrenom(newInfopersonnel.getPrenom());
         BDpersonnel.setDate_naissance((newInfopersonnel.getDate_naissance()));
