@@ -24,4 +24,6 @@ public class Passager {
     private String password;
     private String tel;
     private Date date_naissance;
+
+    
 }
