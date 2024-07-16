@@ -1,6 +1,7 @@
 package odk.g1.penkuru.penkuru.Controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +23,8 @@ public class AdminController {
     private final AdminService adminService;
 
     @PostMapping("/creer")
-    public Admin create(@RequestBody Admin admin){
-        return adminService.creer(admin);
+    public void create(@RequestBody Admin admin){
+        adminService.creer(admin);
     }
 
     @GetMapping("/afficher")
@@ -39,5 +40,10 @@ public class AdminController {
     @DeleteMapping("/supprimer/{id}")
     public String supprimer(@PathVariable Long id){
         return adminService.supprimer(id);
+    }
+
+    @PostMapping(path = "activation")
+    public void activation(@RequestBody Map<String, String> activation) {
+        this.adminService.activation(activation);
     }
 }

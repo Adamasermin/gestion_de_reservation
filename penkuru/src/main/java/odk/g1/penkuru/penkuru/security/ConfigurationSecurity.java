@@ -35,7 +35,7 @@ public class ConfigurationSecurity {
                               authorize ->
                                authorize
                                 .requestMatchers(GET,"/admin/afficher").permitAll()
-                                .requestMatchers(POST,"/admin/creer", "/role","login/connexion").permitAll()
+                                .requestMatchers(POST,"/admin/creer", "/role","login/connexion", "/admin/activation").permitAll()
                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->

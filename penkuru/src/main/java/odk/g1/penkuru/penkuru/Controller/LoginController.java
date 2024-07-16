@@ -3,6 +3,7 @@ package odk.g1.penkuru.penkuru.Controller;
 import lombok.AllArgsConstructor;
 import odk.g1.penkuru.penkuru.Services.AdminService;
 import odk.g1.penkuru.penkuru.dto.AuthenticationDTO;
+import odk.g1.penkuru.penkuru.security.JwtService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +19,7 @@ public class LoginController {
 
     private AuthenticationManager authenticationManager;
     private AdminService adminService;
+    private final JwtService jwtService;
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(path = "connexion")
@@ -26,9 +28,11 @@ public class LoginController {
                 new UsernamePasswordAuthenticationToken(authenticationDTO.username(), authenticationDTO.password())
         );
 
-       /* if(authenticate.isAuthenticated()) {
-            return this.jwtService.generate(authentificationDTO.username());
-        }*/
+        if(authenticate.isAuthenticated()) {
+            return this.jwtService.generate(authenticationDTO.username());
+        }
         return null;
     }
+
+
 }

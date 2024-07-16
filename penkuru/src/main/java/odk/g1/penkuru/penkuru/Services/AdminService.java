@@ -1,11 +1,13 @@
 package odk.g1.penkuru.penkuru.Services;
 
+import java.time.Instant;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import odk.g1.penkuru.penkuru.Models.Role;
+import odk.g1.penkuru.penkuru.Models.Validation;
 import odk.g1.penkuru.penkuru.Repository.RoleRepository;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,8 +23,9 @@ public class AdminService implements UserDetailsService {
     private final AdminRepository adminRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final RoleRepository roleRepository;
+    private final ValidationService validationService;
 
-    public Admin creer(Admin admin) {
+    public void creer(Admin admin) {
 
         if(!admin.getEmail().contains("@")) {
             throw  new RuntimeException("Votre mail invalide");
@@ -37,7 +40,7 @@ public class AdminService implements UserDetailsService {
         }
         String mdpCrypte = this.bCryptPasswordEncoder.encode(admin.getPassword());
         admin.setPassword(mdpCrypte);
-        // Récupérer le rôle par son libellé (nom)
+        // Récupérer le rôle par son nom (nom)
         String roleName = admin.getRole().getNom();
         Role role = roleRepository.findByNom(roleName);
 
@@ -45,9 +48,9 @@ public class AdminService implements UserDetailsService {
             throw new IllegalArgumentException("Le rôle spécifié n'existe pas");
         }
         admin.setRole(role);
-        return adminRepository.save(admin);
+        admin = this.adminRepository.save(admin);
+        this.validationService.enregistrer(admin);
     }
-
 
     public Admin modifier(Long id, Admin admin) {
         Optional<Admin> optionalAdmin= adminRepository.findById(id);
@@ -67,6 +70,16 @@ public class AdminService implements UserDetailsService {
     public String supprimer(Long id) {
         adminRepository.deleteById(id);
         return "Admin supprimé avec succès";
+    }
+
+    public void activation(Map<String, String> activation) {
+        Validation validation = this.validationService.lireEnFonctionDuCode(activation.get("code"));
+        if(Instant.now().isAfter(validation.getExpiration())){
+            throw  new RuntimeException("Votre code a expiré");
+        }
+        Admin adminActiver = this.adminRepository.findById(validation.getAdmin().getId()).orElseThrow(() -> new RuntimeException("Utilisateur inconnu"));
+        adminActiver.setActif(true);
+        this.adminRepository.save(adminActiver);
     }
 
 
