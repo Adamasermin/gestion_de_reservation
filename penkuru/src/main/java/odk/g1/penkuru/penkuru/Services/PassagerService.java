@@ -1,7 +1,6 @@
 package odk.g1.penkuru.penkuru.Services;
 
 import odk.g1.penkuru.penkuru.Models.Passager;
-import odk.g1.penkuru.penkuru.Models.Personnel;
 import odk.g1.penkuru.penkuru.Repository.PassagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

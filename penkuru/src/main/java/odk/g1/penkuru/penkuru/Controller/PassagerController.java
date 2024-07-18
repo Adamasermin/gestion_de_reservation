@@ -1,7 +1,6 @@
 package odk.g1.penkuru.penkuru.Controller;
 
 import odk.g1.penkuru.penkuru.Models.Passager;
-import odk.g1.penkuru.penkuru.Models.Personnel;
 import odk.g1.penkuru.penkuru.Services.PassagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +30,7 @@ public class PassagerController {
         return passagerService.listerPassager();
     }
 
-    @PostMapping("/modifierPassager/{{id}}")
+    @PostMapping("/modifierPassager/{id}")
     public Passager modifierPassager(@PathVariable Long id, @RequestBody Passager newInfoPassager){
         return passagerService.modifierPassager(id,newInfoPassager);
     }

@@ -2,7 +2,6 @@ package odk.g1.penkuru.penkuru.Services;
 
 import odk.g1.penkuru.penkuru.Models.CompagnieAerienne;
 import odk.g1.penkuru.penkuru.Models.Contrat;
-import odk.g1.penkuru.penkuru.Models.Fideliter;
 import odk.g1.penkuru.penkuru.Repository.ContratRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
