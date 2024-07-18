@@ -1,6 +1,6 @@
 package odk.g1.penkuru.penkuru.Models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,14 +11,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Log")
+@Table(name = "Audit")
 @Data
 @NoArgsConstructor
 public class Audit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String personne;
-    private Date dateMod;
+    private String utilisateur;
+    private String action;
+    private LocalDateTime dateDeConnexion;
     private String Liens;
 }
