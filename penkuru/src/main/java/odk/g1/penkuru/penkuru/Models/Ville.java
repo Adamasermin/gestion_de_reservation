@@ -1,12 +1,10 @@
 package odk.g1.penkuru.penkuru.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Ville")
@@ -17,4 +15,10 @@ public class Ville {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+
+    @ManyToOne
+    private Pays pays;
+
+    @OneToMany(mappedBy = "ville")
+    private List<Aeroport> Aeroport;
 }
