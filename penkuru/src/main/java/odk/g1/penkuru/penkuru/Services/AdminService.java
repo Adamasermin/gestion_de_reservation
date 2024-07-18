@@ -40,14 +40,14 @@ public class AdminService implements UserDetailsService {
         }
         String mdpCrypte = this.bCryptPasswordEncoder.encode(admin.getPassword());
         admin.setPassword(mdpCrypte);
-        // Récupérer le rôle par son nom (nom)
-        String roleName = admin.getRole().getNom();
-        Role role = roleRepository.findByNom(roleName);
-
-        if (role == null) {
-            throw new IllegalArgumentException("Le rôle spécifié n'existe pas");
-        }
-        admin.setRole(role);
+//        // Récupérer le rôle par son nom (nom)
+//        String roleName = admin.getRole().getNom();
+//        Role role = roleRepository.findByNom(roleName);
+//
+//        if (role == null) {
+//            throw new IllegalArgumentException("Le rôle spécifié n'existe pas");
+//        }
+//        admin.setRole(role);
         admin = this.adminRepository.save(admin);
         this.validationService.enregistrer(admin);
     }

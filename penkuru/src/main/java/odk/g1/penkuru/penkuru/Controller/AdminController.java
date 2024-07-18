@@ -3,14 +3,7 @@ package odk.g1.penkuru.penkuru.Controller;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.AllArgsConstructor;
 import odk.g1.penkuru.penkuru.Models.Admin;
@@ -19,6 +12,7 @@ import odk.g1.penkuru.penkuru.Services.AdminService;
 @RestController
 @RequestMapping("/admin")
 @AllArgsConstructor
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class AdminController {
     private final AdminService adminService;
 
