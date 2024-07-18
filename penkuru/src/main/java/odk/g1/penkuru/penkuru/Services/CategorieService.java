@@ -4,7 +4,6 @@ import lombok.Data;
 import odk.g1.penkuru.penkuru.Models.Categorie;
 import odk.g1.penkuru.penkuru.Repository.CategorieRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 

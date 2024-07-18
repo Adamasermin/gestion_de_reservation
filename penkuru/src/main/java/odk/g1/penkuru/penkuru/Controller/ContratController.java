@@ -2,8 +2,6 @@ package odk.g1.penkuru.penkuru.Controller;
 
 
 import odk.g1.penkuru.penkuru.Models.Contrat;
-import odk.g1.penkuru.penkuru.Models.Personnel;
-import odk.g1.penkuru.penkuru.Repository.ContratRepository;
 import odk.g1.penkuru.penkuru.Services.ContratService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +30,7 @@ public class ContratController {
         return contratService.listerContrat();
     }
 
-    @PostMapping("/modifierContrat/{{id}}")
+    @PostMapping("/modifierContrat/{id}")
     public Contrat modifierContrat(@PathVariable Long id, @RequestBody Contrat newInfoContrat){
         return contratService.modifierContrat(id,newInfoContrat);
     }

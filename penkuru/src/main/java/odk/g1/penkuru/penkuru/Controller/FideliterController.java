@@ -1,7 +1,6 @@
 package odk.g1.penkuru.penkuru.Controller;
 
 import odk.g1.penkuru.penkuru.Models.Fideliter;
-import odk.g1.penkuru.penkuru.Models.Personnel;
 import odk.g1.penkuru.penkuru.Services.FideliterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

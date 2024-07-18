@@ -32,7 +32,7 @@ public class PersonnelController {
         return personnelService.listerPersonnel();
     }
 
-    @PostMapping("/modifierPersonnel/{{id}}")
+    @PostMapping("/modifierPersonnel/{id}")
     public Personnel modifierPersonnel(@PathVariable Long id, @RequestBody Personnel newInfoPersonnel){
         return personnelService.modifierPersonel(id,newInfoPersonnel);
     }
