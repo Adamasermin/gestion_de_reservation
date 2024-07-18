@@ -19,6 +19,6 @@ public class Fideliter {
     private Long id;
     private int points;
 
-    @OneToOne(mappedBy = "passager")
+    @OneToOne(mappedBy = "fideliter")
     private Passager passager;
 }

@@ -1,14 +1,11 @@
 package odk.g1.penkuru.penkuru.Models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Aeroport")
@@ -22,4 +19,7 @@ public class Aeroport {
 
     @ManyToOne
     private Ville ville;
+
+    @ManyToMany
+    private List<Vol> vol;
 }
