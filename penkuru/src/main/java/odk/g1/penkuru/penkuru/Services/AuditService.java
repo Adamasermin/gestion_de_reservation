@@ -31,6 +31,6 @@ public class AuditService {
 
     // Méthode pour récupérer les enregistrements d'audit par utilisateur
     public List<Audit> recuperationUtilisateur(String utilisateur) {
-        return auditRepository.findByUser(utilisateur);
+        return auditRepository.findByUtilisateur(utilisateur);
     }
 }

@@ -27,6 +27,6 @@ public class Aeroport {
     @ManyToOne
     private Ville ville;
 
-    @OneToMany(mappedBy = "aeroport")
-    private List<Vol> vols;
+    /*@OneToMany(mappedBy = "aeroport")
+    private List<Vol> vols;*/
 }

@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import odk.g1.penkuru.penkuru.Models.Audit;
 
 public interface AuditRepository extends JpaRepository<Audit, Long>{
-    List<Audit> findByUser(String username);
+    List<Audit> findByUtilisateur(String username);
 }

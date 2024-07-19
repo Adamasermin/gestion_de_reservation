@@ -1,15 +1,20 @@
 package odk.g1.penkuru.penkuru.Controller;
 
 //import org.hibernate.mapping.List;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import lombok.AllArgsConstructor;
 import odk.g1.penkuru.penkuru.Models.Vol;
 import odk.g1.penkuru.penkuru.Services.VolService;
+
+import java.util.List;
 //import java.util.List;
 
 @RestController
-@RequestMapping("/vol")
+//@RequestMapping("/vol")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 public class VolController {
     private final VolService volService;
 
@@ -20,10 +25,10 @@ public class VolController {
     }
 
     //@Operation(summary = "Afficher Vol", description = "Afficher la liste des Vol")
-    // @GetMapping("/afficher")
-    // public List<Vol> read(){
-    //     return volService.lire();
-    // }
+    @GetMapping("vol/afficher")
+    public List<Vol> listerVol(){
+        return volService.lire();
+    }
 
     //@Operation(summary = "Modifier Vol", description = "Modifier un Vol")
     @PutMapping("/modifier/{id}")

@@ -1,1 +1,33 @@
-<p>vols works!</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des vols</title>
+</head>
+<body>
+  <app-stat-reser></app-stat-reser>
+  <table>
+    <tbody>
+      <h2>Liste des vols</h2>
+      <tr>
+        <th>Nom</th>
+        <th>Depart/Arrivée</th>
+        <th>Nbr Passager</th>
+        <th>Statut</th>
+      </tr>
+    @for (vol of volls; track vol.id) {
+      <tr class="item-vol">
+        <td>{{vol.id}}</td>
+        <td>{{vol.date_depart}}<br>{{vol.date_retour}}</td>
+        <td>{{vol.nbre_de_place_dispo}}</td>
+        <td>{{vol.ville_arrive}} <br>{{vol.ville_depart}}</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</body>
+</html>
