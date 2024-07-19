@@ -1,0 +1,17 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+  }
+  
