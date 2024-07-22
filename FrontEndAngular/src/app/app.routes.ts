@@ -7,6 +7,8 @@ import { ParametresComponent } from './components/parametres/parametres.componen
 import { PassagersComponent } from './components/passagers/passagers.component';
 import { PersonnelComponent } from './components/personnel/personnel.component';
 import { VolsComponent } from './components/vols/vols.component';
+import { AjouterPassagerComponent } from './components/passagers/ajouter-passager/ajouter-passager.component';
+import { ModifierPassagerComponent } from './components/passagers/modifier-passager/modifier-passager.component';
 
 export const routes: Routes = [
     {path: "aeroport",title: "aeroport", component: AeroportComponent},
@@ -15,5 +17,7 @@ export const routes: Routes = [
     {path: "parametres", title: "parametres", component: ParametresComponent},
     {path: "passagers",title: "passagers", component: PassagersComponent},
     {path: "personnel",title: "personnel", component: PersonnelComponent},
-    {path: "vols",title: "vols", component: VolsComponent}
+    {path: "vols",title: "vols", component: VolsComponent},
+    {path:"ajouterPassager",component:AjouterPassagerComponent},
+    {path:"modifierPassager",component:ModifierPassagerComponent}
 ];

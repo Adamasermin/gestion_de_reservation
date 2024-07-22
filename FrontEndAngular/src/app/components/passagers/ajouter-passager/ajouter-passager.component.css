@@ -1,0 +1,13 @@
+.principal{
+    position: absolute;
+    top: 10%;
+    left: 24%;
+    width: 75%;
+    height: 80%;
+}
+.ajouterdiv{
+    width: 90%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 15px;
+}

@@ -16,7 +16,7 @@ export class BarNavigationComponent {
   vols: string = "assets/images/vol-direct 1.png";
   personnels: string = "assets/images/Personnel.png";
   aeroport: string = "assets/images/aeroport 1.png";
-  passagers: string = "assets/images/passagers 1.png";
+  passagers: string = "assets/images/passagers.png";
   avions: string = "assets/images/Avions.png";
   parametres: string = "assets/images/Settings.png";
   faq: string = "assets/images/faq 1.png";
