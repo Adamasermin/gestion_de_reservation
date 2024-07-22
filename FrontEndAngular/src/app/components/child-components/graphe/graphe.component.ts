@@ -11,11 +11,25 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrl: './graphe.component.css'
 })
 export class GrapheComponent {
-  data: ChartData<'bar'> = {
-    labels: ['Jan'],
+  data: ChartData<'line'> = {
+    labels: ['Jan', 'fev', 'Mars', 'Avr', 'Mai'],
     datasets: [
       {
-        data: [10]
+        data: [8, 4, 2, 9, 10], label: "Revenus",
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      }
+    ]
+  }
+  data_1: ChartData<'bar'> = {
+    labels: ['Jan', 'fev', 'Mars', 'Avr', 'Mai'],
+    datasets: [
+      {
+        data: [8, 4, 2, 9, 10], label: "Vols",
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
       }
     ]
   }
