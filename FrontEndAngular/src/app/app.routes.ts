@@ -9,6 +9,7 @@ import { PassagersComponent } from './components/passagers/passagers.component';
 import { PersonnelComponent } from './components/personnel/personnel.component';
 import { VolsComponent } from './components/vols/vols.component';
 import { ConnexionComponent } from './components/page_inscription_connexion/connexion/connexion.component';
+import {InscriptionComponent} from "./components/page_inscription_connexion/inscription/inscription.component";
 
 export const routes: Routes = [
     {path: "home", title: "home", component: HomeComponent},
@@ -20,5 +21,6 @@ export const routes: Routes = [
     {path: "personnel",title: "personnel", component: PersonnelComponent},
     {path: "vols",title: "vols", component: VolsComponent},
     {path: "login", title: "login", component: ConnexionComponent},
-    {path: '', redirectTo: "/login", pathMatch: "full"}
+    {path: '', redirectTo: "/login", pathMatch: "full"},
+    {path: 'inscription', component: InscriptionComponent}
 ];

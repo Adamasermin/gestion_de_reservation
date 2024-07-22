@@ -4,6 +4,7 @@ import { BarNavigationComponent } from "./components/child-components/bar-naviga
 import { BarRechercheComponent } from "./components/child-components/bar-recherche/bar-recherche.component";
 import { GrapheComponent } from "./components/child-components/graphe/graphe.component";
 import { HomeComponent } from "./components/home/home.component";
+import {InscriptionComponent} from "./components/page_inscription_connexion/inscription/inscription.component";
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,12 @@ import { HomeComponent } from "./components/home/home.component";
     BarNavigationComponent,
     BarRechercheComponent,
     GrapheComponent,
-    HomeComponent
+    HomeComponent,
+    InscriptionComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  
+
 }
