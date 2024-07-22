@@ -32,4 +32,7 @@ public class Personnel {
 
     @ManyToOne
     private CompagnieAerienne compagnieAerienne;
+
+    @ManyToOne
+    private Role role;
 }

@@ -1,0 +1,23 @@
+.ma-div{
+    position: fixed;
+    width: 75%;
+    height: 10%;
+    left: 24%;
+    top: 3%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.monform{
+    margin-left: 5%;
+}
+
+.info-admin{
+    padding-top: 10%;
+}
+
+.custom-width {
+    width: 20%;
+}

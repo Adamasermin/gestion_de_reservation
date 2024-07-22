@@ -1,0 +1,42 @@
+.container{
+position: absolute;
+width: 250px;
+left: 40px;
+top: 15px;
+background: #FFFFFF;
+border-radius: 12px;
+
+}
+.position-fixed {
+    z-index: 1000; 
+    width: 250px; 
+    height: 95vh;
+    overflow: hidden; 
+    
+}
+
+.shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar{
+    padding-left: 20%;
+    
+}
+.navbar:hover{
+    background: rgba(219, 253, 255, 0.42);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+.navbar:hover::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 4px;
+    height: 100%;
+    background: #04BBC7;
+}
