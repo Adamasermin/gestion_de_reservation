@@ -37,7 +37,7 @@
     text-align: center;
     flex-direction: column;
 }
-.icon_email_password img{
+.icon_email_password i{
     position: absolute;
     margin-left: -15px;
 }
@@ -75,6 +75,8 @@ button{
     border-radius: 10px;
     text-align: center;
     font-weight: 100;
+    margin-top: 25px;
+    margin-left: 50px;
 }
 h5{
     color: red;

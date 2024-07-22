@@ -7,8 +7,8 @@
     <div class="d-flex align-items-center custom-width">
         <img [ngSrc]="profil" alt="photo-profil" width="40" height="40" class="me-2">
         <div class="info-admin">
-            <h6>Adama SERMIN</h6>
-            <p>Admin</p>
+            <h6>{{ getUsername()}}</h6>
+          <a (click)="logout()" class="text-danger" style="text-decoration: none; cursor: pointer">Logout</a>
         </div>
     </div>
 </div>

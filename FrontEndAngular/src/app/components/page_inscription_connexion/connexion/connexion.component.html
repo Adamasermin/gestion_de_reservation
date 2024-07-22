@@ -11,23 +11,23 @@
                 <h1>Login</h1>
             </div>
             <div class="form_content">
-                <form action="" method="post">
+                <form (ngSubmit)="login()">
                     <div>
-                        <label for="email">Identifiant/Email</label>
+                        <label>Identifiant/Email</label>
                         <br>
                         <div class="icon_email_password">
-                            <input type="email">
-                            <img [ngSrc]="person" alt="person" width="15" height="15">
+                            <input type="email" [(ngModel)]="credentials.username" name="username">
+                          <i class="bi bi-person"></i>
                         </div>
 
                     </div>
                     <br>
                     <div>
-                        <label for="password">Mot de passe</label>
+                        <label>Mot de passe</label>
                         <br>
                         <div class="icon_email_password">
-                            <input type="password">
-                            <img [ngSrc]="eyes" alt="eyes" width="15" height="15">
+                            <input type="password" name="password"  [(ngModel)]="credentials.password">
+                          <i class="bi bi-eye-slash"></i>
                         </div>
 
                     </div>
