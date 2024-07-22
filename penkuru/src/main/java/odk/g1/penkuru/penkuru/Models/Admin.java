@@ -26,8 +26,8 @@ public class Admin implements UserDetails {
     private String tel;
 
     private boolean actif = false;
-//    @OneToOne(cascade = CascadeType.ALL)
-//    private Role role;
+   @OneToOne(cascade = CascadeType.ALL)
+   private Role role;
 
 
     @Override

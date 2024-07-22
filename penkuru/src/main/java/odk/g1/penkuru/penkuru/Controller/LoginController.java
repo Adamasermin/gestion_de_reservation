@@ -1,6 +1,7 @@
 package odk.g1.penkuru.penkuru.Controller;
 
 import lombok.AllArgsConstructor;
+import odk.g1.penkuru.penkuru.Models.Admin;
 import odk.g1.penkuru.penkuru.Services.AdminService;
 import odk.g1.penkuru.penkuru.dto.AuthenticationDTO;
 import org.springframework.http.HttpStatus;
@@ -33,11 +34,14 @@ public class LoginController {
                     new UsernamePasswordAuthenticationToken(authenticationDTO.username(), authenticationDTO.password())
             );
             SecurityContextHolder.getContext().setAuthentication(authenticate);
-            UserDetails userDetails = (UserDetails) authenticate.getPrincipal();
-            return ResponseEntity.ok(
-                    userDetails.getUsername()
+            Admin userDetails = (Admin) authenticate.getPrincipal();
+            // Créez une map pour contenir les détails de l'utilisateur
+            Map<String, Object> userInfo = new HashMap<>();
+            userInfo.put("id", userDetails.getId());
+            userInfo.put("username", userDetails.getUsername());
+            userInfo.put("roles", userDetails.getRole());
 
-            );
+            return ResponseEntity.ok(userInfo);
         } catch (AuthenticationException e) {
             return ResponseEntity.status(401).body("Invalide username ou password");
         }
