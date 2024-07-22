@@ -1,11 +1,13 @@
 package odk.g1.penkuru.penkuru.security;
 
 import lombok.AllArgsConstructor;
+import odk.g1.penkuru.penkuru.Services.AdminService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,7 +28,7 @@ public class ConfigurationSecurity {
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final UserDetailsService userDetailsService;
-    private final JwtFilter jwtFilter;
+    private final AdminService adminService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -37,27 +39,31 @@ public class ConfigurationSecurity {
                               authorize ->
                                authorize
                                 .requestMatchers(GET,"/admin/afficher").permitAll()
-                                .requestMatchers(POST,"/admin/creer", "/role","login/connexion", "/admin/activation").permitAll()
+                                .requestMatchers(POST,"/admin/creer", "/role","login/connexion", "login/logout","/admin/activation").permitAll()
                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->
                                 httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                //.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
         .build();
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(adminService).passwordEncoder(bCryptPasswordEncoder);
     }
 
     @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        return http.getSharedObject(AuthenticationManagerBuilder.class).build();
+    }
+
+    /*@Bean
     public AuthenticationProvider authenticationProvider(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setUserDetailsService(userDetailsService);
         daoAuthenticationProvider.setPasswordEncoder(bCryptPasswordEncoder);
         return daoAuthenticationProvider;
-    }
+    }*/
 
 }
