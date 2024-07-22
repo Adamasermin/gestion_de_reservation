@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import odk.g1.penkuru.penkuru.Models.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long >{
-    
+    Role findByNom(String nom);
 }

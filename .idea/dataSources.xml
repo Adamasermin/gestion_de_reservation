@@ -6,6 +6,9 @@
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/penkuru/src/main/resources/application.properties</remarks>
+    <data-source source="LOCAL" name="gestiondereservation_db@localhost" uuid="d247d3f2-756e-465a-abb4-cff09bdc10c0">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/gestiondereservation_db</jdbc-url>
       <jdbc-additional-properties>
