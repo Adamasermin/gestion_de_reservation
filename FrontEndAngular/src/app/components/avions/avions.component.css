@@ -1,0 +1,95 @@
+.custom-size{
+    height: 5em;      
+    background-color:  white; 
+    padding: 10px;       
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    text-align: center;  
+    border-radius: 10px;
+}
+.passager{
+    display: flex;
+   
+}
+.custom-stats{
+    height: 10em;
+    width: 20em;       
+    background-color:  white; 
+    padding: 10px;       
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}
+.custom-nb{
+    height: 10em;
+    width: 20em;       
+    background-color:  white;
+    border-radius: 10px;
+}
+.baisseniveau{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.baisseniveau p{
+    font-size: 25px;
+}
+
+.form
+{
+    align-content: center;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.profil_photo
+{
+
+    width: max-content;
+    max-width: calc(max-content + 12px);
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-items: center;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.input_container
+{
+    padding: 0px;
+}
+
+.profil_photo p
+{
+    margin: 0;
+}
+.profil_photo > div
+{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 6px;
+    align-items:flex-start;
+}
+
+.profil_photo p:first-child
+{
+    font-weight: bold;
+}
+
+.principal{
+    position: absolute;
+    top: 10%;
+    left: 24%;
+    width: 75%;
+    height: 80%;
+}
+.tableau{
+    width: auto;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+.ajt-img{
+    padding: 0px;
+    margin-top: -0.8em;
+}

@@ -27,17 +27,7 @@
 .baisseniveau p{
     font-size: 25px;
 }
-.search
-{
-    display:flex;
-    justify-content: space-between;
-    height: 4em;      
-    background-color:  white;       
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-    box-sizing: border-box;
-    padding: 0px 0.5em 0px 0.5em;
-    margin: 0px 0px 16px 0px;
-}
+
 .form
 {
     align-content: center;

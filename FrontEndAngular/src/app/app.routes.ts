@@ -19,5 +19,6 @@ export const routes: Routes = [
     {path: "personnel",title: "personnel", component: PersonnelComponent},
     {path: "vols",title: "vols", component: VolsComponent},
     {path:"ajouterPassager",component:AjouterPassagerComponent},
-    {path:"modifierPassager",component:ModifierPassagerComponent}
+    { path:"modifier-passager/:id", component: ModifierPassagerComponent }
+
 ];

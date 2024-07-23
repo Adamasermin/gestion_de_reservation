@@ -28,7 +28,7 @@ export class PassagerService {
   }
   //modification d'un passager
   async updtatePassager(passager:Passager):Promise<Passager>{
-    const data = await fetch(`${this.url}${passager.id}`,{
+    const data = await fetch(`${this.url}/${passager.id}`,{
       method:'PUT',
       headers:{
         'Content-Type': 'application/json'
@@ -48,6 +48,11 @@ export class PassagerService {
     const passager:Passager ={nom,prenom,email,tel,password}
     return await this.addPassager(passager)
 
+  }
+  async getPassagerById(id:number):Promise<Passager>{
+    const data = await fetch(`${this.url}/afficher/${id}`);
+    
+    return await data.json() ?? [];
   }
 }
 
